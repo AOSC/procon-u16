@@ -214,14 +214,10 @@ aside h1 {
 
 }
 
-#greeting {
-  background: #fcfcfb;
-}
-
-#partners {
+.light-blue {
   background: #eef9f9;
-  border-top: #959e9e;
-  border-bottom: #959e9e;
+  border-top: 1px solid #d2dfdf;
+  border-bottom: 1px solid #d2dfdf;
 }
 
 .inner {
