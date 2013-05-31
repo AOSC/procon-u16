@@ -198,9 +198,18 @@ aside h1 {
   color: #efefef;
 }
 
-#oldie-outdated {
+#oldie-outdated, #jsnotice {
   background: #ea6d6d;
   color: #482122;
+  border-bottom: 3px solid #7e3c3e;
+}
+
+#jsnotice {
+  display: none;
+}
+
+.no-js #jsnotice {
+  display: block;
 }
 
 .light-blue {
