@@ -112,12 +112,21 @@ ul {
 }
 
 #header {
-  background: transparent url('../img/staff.jpg') no-repeat center center;
-  height: 600px;
+  min-height: 600px;
+  height: auto;
   position: relative;
-  border-bottom: 1px solid #bbbdbd;
+  border-bottom: 12px solid #40bd4c;
+}
+
+#header-background {
+  background: transparent url('../img/staff.jpg') no-repeat center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
-  overflow: hidden;
+  z-index: -200;
 }
 
 section > header > h1 {
@@ -151,22 +160,24 @@ aside h1 {
 
 .overlay {
   position: absolute;
-  background: #fff7df;
-  opacity: 0.8;
+  background: #000;
+  opacity: 0.6;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: -100;
 }
 
 .dot {
   position: absolute;
-  background: transparent url('../img/dots.png');
+  background: transparent url('../img/dot_white.png');
   background-repeat: repeat repeat;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  z-index: -100;
 }
 
 .button {
@@ -195,11 +206,16 @@ aside h1 {
 #contest-date {
   font-size: 30px;
   margin-top: 100px;
+  color: #efefef;
 }
 
 /* TODO */
 #oldie-outdated {
 
+}
+
+#greeting {
+  background: #fcfcfb;
 }
 
 #partners {
@@ -222,8 +238,7 @@ aside h1 {
   margin-top: 60px;
   font-style: italic;
   font-size: 16px;
-  color: #010101;
-  font-weight: bold;
+  color: #bdbdbd;
 }
 
 .content {
@@ -251,6 +266,26 @@ aside h1 {
   padding: 0 20px;
 }
 
+@media handheld, only screen and (max-width: 767px) {
+
+  #header {
+    min-height: 500px;
+  }
+
+  #contest-date {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .banner {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  #plug {
+    font-size: 14px;
+  }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
