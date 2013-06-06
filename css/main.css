@@ -236,10 +236,11 @@ td, th {
 }
   
 .org {
-  font-size: 15px;
-  color: #9b9b9b;
+  font-size: 16px;
+  color: #696969;
   font-size: bold;
   text-decoration: none;
+  font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
 }
 
 #contest-date {
