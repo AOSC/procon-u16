@@ -100,6 +100,79 @@ ul {
   list-style: none;
 }
 
+h1 {
+  color: #191919;
+  font-family:"ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+  font-size: 26px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+article h1 {
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"MS Ｐゴシック","MS PGothic";
+  font-weight: bold;
+  font-size: 16px;
+}
+
+h1 a {
+  color: #191919;
+  text-decoration: none;
+}
+
+h1 a:visited {
+  color: #191919;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: #191919;
+  text-decoration: none;
+}
+
+aside h1 {
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+p {
+  color: #646464;
+}
+
+a:hover {
+  color: #44d372;
+}
+
+tr {
+  border: 1px solid black;
+}
+
+td {
+  text-align: left;
+}
+
+small {
+  color: #787878;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 2px;
+}
+
+td, th {
+  border: 1px solid #9d9d9d;
+  padding: 4px 10px;
+}
+
+.td-big {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.align-right {
+  text-align: right;
+}
+
 #header {
   min-height: 600px;
   height: auto;
@@ -118,33 +191,10 @@ ul {
   z-index: -200;
 }
 
-section > header > h1 {
-  color: #090909;
-  margin: 0;
+#info {
 }
 
-a:hover {
-  color: #44d372;
-}
-
-h1 a {
-  color: #090909;
-  text-decoration: none;
-}
-
-h1 a:visited {
-  color: #090909;
-  text-decoration: none;
-}
-
-h1 a:hover {
-  color: #090909;
-  text-decoration: none;
-}
-
-aside h1 {
-  margin-top: 40px;
-  margin-bottom: 4px;
+#lecture {
 }
 
 .overlay {
@@ -186,10 +236,11 @@ aside h1 {
 }
   
 .org {
-  font-size: 15px;
-  color: #9b9b9b;
+  font-size: 16px;
+  color: #696969;
   font-size: bold;
   text-decoration: none;
+  font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
 }
 
 #contest-date {
@@ -213,9 +264,9 @@ aside h1 {
 }
 
 .light-blue {
-  background: #eef9f9;
-  border-top: 1px solid #d2dfdf;
-  border-bottom: 1px solid #d2dfdf;
+  background: #fafafb;
+  border-top: 1px solid #e9eaed;
+  border-bottom: 1px solid #e9eaed;
 }
 
 .inner {
@@ -256,8 +307,9 @@ aside h1 {
 }
 
 .middle-content {
-  max-width: 400px;
-  padding: 0 20px;
+  margin: 20px auto;
+  max-width: 460px;
+  padding: 0 auto;
 }
 
 @media handheld, only screen and (max-width: 767px) {
