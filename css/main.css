@@ -134,6 +134,11 @@ aside h1 {
   margin-bottom: 4px;
 }
 
+h1 small {
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"MS Ｐゴシック","MS PGothic";
+}
+
 p {
   color: #646464;
 }
