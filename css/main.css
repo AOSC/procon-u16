@@ -286,9 +286,17 @@ td, th {
   margin: 0 auto;
   max-width: 480px;
   margin-top: 60px;
+}
+
+#plug h1 {
+  font-size: 20px;
+  color: #e6e6e6;
+}
+
+#plug p {
   font-style: italic;
   font-size: 16px;
-  color: #bdbdbd;
+  color: #cbcbcb;
 }
 
 .content {
