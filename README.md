@@ -16,23 +16,6 @@
 ### 使用しているJavaScriptライブラリ
 - [Modernizr]
 
-## TODO
-
-- CSSが汚いのでなんとかする
-- 開催のところに"第三回"をいれる
-- 後援など、コンテンツを入れる
-- 配色をちゃんと考える
-- [U-20プログラミングコンテスト]と、[中高生国際Rubyプログラミングコンテスト]のリンクバナーの設置
-- 後援・協賛の企業のロゴのイメージ素材の確認、設置
-- 実行委員長の写真使用の承認
-- 実行委員の写真使用の承認、撮影
-- 過去のWPコンテンツの復元
-- [Modernizr]による古いブラウザのためのPolyfillのためのスクリプトの設置
-- [Modernizr]による新しいブラウザのみにアニメーションCSSの読み込み
-- HTML5対応をちゃんと確認後[HTML5ロゴ]設置
-- Twitter, Facebookなどのソーシャルメディアリンク？（要件等）
-- バナーにマウスホバーしたときに、バナー埋め込み情報をツールチップで表示させる
-
 
 [LESS]: http://lesscss.org/
 [SCSS]: http://sass-lang.com/
@@ -45,4 +28,3 @@
 [中高生国際Rubyプログラミングコンテスト]: http://www.mitaka.ne.jp/ruby/ruby2012/index.html
 [HTML5ロゴ]: http://www.w3.org/html/logo/
 [Font Awesome]: http://fortawesome.github.io/Font-Awesome/
-
