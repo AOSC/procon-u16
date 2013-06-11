@@ -186,7 +186,6 @@ td, th {
   min-height: 600px;
   height: auto;
   position: relative;
-  border-bottom: 12px solid #40bd4c;
 }
 
 #header-background {
@@ -198,6 +197,19 @@ td, th {
   height: 100%;
   background-size: cover;
   z-index: -200;
+}
+
+#links {
+  background: #40bd4c;
+}
+
+#links li {
+  line-height: 100px;
+  display: inline-block;
+}
+
+#links img {
+  vertical-align: middle;
 }
 
 #info {
