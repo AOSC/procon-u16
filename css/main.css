@@ -360,6 +360,18 @@ td, th {
   #plug {
     font-size: 14px;
   }
+
+  #links {
+    padding: 0;
+  }
+
+  #links li {
+    line-height: 60px;
+    display: block;
+    margin: 20px auto;
+    padding: 0;
+  }
+}
 }
 /* ==========================================================================
    Helper classes
