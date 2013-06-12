@@ -201,6 +201,8 @@ td, th {
 
 #links {
   background: #40bd4c;
+  position: relative;
+  padding: 0;
 }
 
 #links li {
@@ -210,6 +212,45 @@ td, th {
 
 #links img {
   vertical-align: middle;
+}
+
+#links header {
+  margin: 0;
+  padding: 0;
+  background: #fdfdff;
+  border-bottom: 1px solid #3aad49;
+}
+
+#links header h1 {
+  text-align: center;
+  padding: 10px 20px;
+  color: #75727a;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"MS Ｐゴシック","MS PGothic";
+  font-size: 16px;
+  line-height: 30px;
+}
+
+#banner {
+  position: absolute;
+  bottom: 100%;
+  right: 10px;
+  margin-bottom: 20px;
+  z-index: 1000;
+}
+
+#link-arrow {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: #fdfdff;
+  border-width: 16px;
+  right: 70px;
+  margin-left: -16px;
 }
 
 #info {
@@ -250,12 +291,6 @@ td, th {
   border-radius: 12px;
 }
 
-.banner {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-}
-  
 .org {
   font-size: 16px;
   color: #696969;
@@ -350,11 +385,6 @@ td, th {
   #contest-date {
     font-size: 18px;
     margin-top: 20px;
-  }
-
-  .banner {
-    position: relative;
-    margin-top: 60px;
   }
 
   #plug {
