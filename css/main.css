@@ -102,6 +102,17 @@ footer {
   min-height: 100px;
 }
 
+footer aside {
+  position: absolute;
+  left: 100px;
+  /* half size of image */
+  top: -32px;
+}
+
+footer aside img {
+  margin-left: -50%;
+}
+
 ul {
   list-style: none;
 }
