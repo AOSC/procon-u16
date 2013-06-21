@@ -90,10 +90,16 @@ body {
   font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"MS Ｐゴシック","MS PGothic";
 }
 
-section {
+section, footer {
   margin: 0 auto;
   text-align: center;
   padding: 30px 0;
+  position: relative;
+}
+
+footer {
+  background: #40bd4c;
+  min-height: 100px;
 }
 
 ul {
