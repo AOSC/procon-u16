@@ -1,0 +1,17 @@
+{
+    "name": "aosc/procon-u16",
+    "authors": [
+        {
+            "name": "smagch",
+            "email": "smagch@gmail.com"
+        }
+    ],
+    "require": {
+      "Respect\/Validation": "0.4.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "lib"
+        }
+    }
+}
