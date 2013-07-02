@@ -7,9 +7,9 @@ use PHPMailer;
 class Mailer
 {
     /**
-     * @param string   email address to send
-     * @param string   email content to send
-     * @param boolean  success or fail
+     * @param array|string   email address to send
+     * @param string         email content to send
+     * @param boolean        success or fail
      */
     public static function send($address, $body)
     {
@@ -33,7 +33,14 @@ class Mailer
         $mail->Username   = $config->mailer_username;
         $mail->Password   = $config->mailer_password;
         $mail->SetFrom($config->mailer_username, '');
-        $mail->AddAddress($address, '');
+        if (is_array($address)) {
+            foreach ($address as $val) {
+                $mail->AddAddress($val, '');
+            }
+        } else {
+            $mail->AddAddress($address, '');
+        }
+
         $mail->Subject = 'U16 Asahikawa Programming Contest Email Nortification';
         $mail->Body    = mb_convert_encoding($body,"JIS","UTF-8");
         // TODO error logging here
