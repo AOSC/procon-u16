@@ -4,5 +4,7 @@
   "dbuser": "",
   "dbpass": "",
   "mailer_username": "info@procon-asahikawa.lolipop.jp",
-  "mailer_password": ""
+  "mailer_password": "",
+  "logging_path": "debug.log",
+  "logging_level": "debug"
 }
