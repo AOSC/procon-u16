@@ -2,5 +2,7 @@
   "dbname": "procon",
   "dbhost": "localhost",
   "dbuser": "",
-  "dbpass": ""
+  "dbpass": "",
+  "mailer_username": "info@procon-asahikawa.lolipop.jp",
+  "mailer_password": ""
 }
