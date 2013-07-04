@@ -9,7 +9,7 @@ CREATE TABLE `entry` (
   `name` varchar(100) NOT NULL,
   `school_name` varchar(100) NOT NULL,
   `grade` tinyint(1) unsigned NOT NULL,
-  `category` enum('kyogi','sakuhin','jugyo') NOT NULL,
+  `category` set('kyogi','sakuhin','jugyo') NOT NULL,
   `q_kyogi_macro` enum('yes','no', '') DEFAULT '',
   `q_kyogi_exp` enum('yes','no', '') DEFAULT '',
   `lecture_pref_day_one` tinyint(1) unsigned NOT NULL,
