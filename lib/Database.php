@@ -11,7 +11,7 @@ class Database
         if (empty(self::$pdo)) {
             $config = Config::getConfig();
             $dsn = "mysql:host={$config->dbhost};dbname={$config->dbname}";
-            static::$pdo = new PDO($dsn, $config->dbuser, $config->dbpass);
+            self::$pdo = new PDO($dsn, $config->dbuser, $config->dbpass);
         }
         return self::$pdo;
     }
