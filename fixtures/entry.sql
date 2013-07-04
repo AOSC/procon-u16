@@ -3,7 +3,6 @@
 -- MySQL Schema for programming contest entry in 2013
 -- MySQL version should be 5.6
 --
--- DROP TABLE IF EXISTS `entry`;
 --
 CREATE TABLE `entry` (
   `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -11,8 +10,8 @@ CREATE TABLE `entry` (
   `school_name` varchar(100) NOT NULL,
   `grade` tinyint(1) unsigned NOT NULL,
   `category` enum('kyogi','sakuhin','jugyo') NOT NULL,
-  `category_kyogi_q_macro` enum('yes','no') DEFAULT NULL,
-  `category_kyogi_q_exp` enum('yes','no') DEFAULT NULL,
+  `q_kyogi_macro` enum('yes','no', '') DEFAULT '',
+  `q_kyogi_exp` enum('yes','no', '') DEFAULT '',
   `lecture_pref_day_one` tinyint(1) unsigned NOT NULL,
   `lecture_pref_day_two` tinyint(1) unsigned NOT NULL,
   `lecture_pref_day_three` tinyint(1) unsigned NOT NULL,
