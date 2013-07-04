@@ -3,6 +3,7 @@
 -- MySQL Schema for programming contest entry in 2013
 -- MySQL version should be 5.6
 --
+-- DROP TABLE IF EXISTS `entry`;
 --
 CREATE TABLE `entry` (
   `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -21,6 +22,6 @@ CREATE TABLE `entry` (
   `comment_sakuhin` text NOT NULL,
   `comment_jugyo` text NOT NULL,
   `comment_lecture` text NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
