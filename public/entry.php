@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+if (empty($_SESSION)) {
+    session_start();
+}
+if (empty($_SESSION['fkey'])) {
+    $fkey = sha1(uniqid(mt_rand(), true));
+    $_SESSION['fkey'] = $fkey;
+} else {
+    $fkey = $_SESSION['fkey'];
+}
+
+?><!DOCTYPE html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
@@ -49,6 +60,7 @@
   </section>
 
   <form action='api/entry.php' method='POST' class="form formee">
+    <input id="fkey" name="fkey" type="hidden" value="<?php echo $fkey;?>" />
     <section class='form middle-content clearfix'>
       <label for='name'>名前</label>
       <input name='name' type='text' id='name' class='validate[required] maxSize[100]' />

@@ -8,7 +8,6 @@ use Utils\Mailer;
 
 $log = Log::getLogger();
 
-// TODO CSRF
 if (empty($_SESSION)) {
     session_start();
 }
@@ -23,6 +22,23 @@ switch ($_SERVER['REQUEST_METHOD']) {
         header('Allow: POST');
         http_response_code(405);
         exit();
+}
+
+/**
+ * For details about CSRF read following documents
+ * http://en.wikipedia.org/wiki/Cross-site_request_forgery
+ * http://www.codinghorror.com/blog/2008/10/preventing-csrf-and-xsrf-attacks.html
+ */
+if (empty($_SESSION['fkey'])) {
+    header(401);
+    echo 'セキュリティーの観点から、ブラウザのクッキーをオンにしていただく必要があります。';
+    exit();
+}
+
+if (empty($_POST['fkey']) || $_SESSION['fkey'] != $_POST['fkey']) {
+    header(401);
+    echo 'セキュリティ上、リクエストを処理出来ません。';
+    exit();
 }
 
 /**
