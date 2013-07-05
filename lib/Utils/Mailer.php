@@ -9,11 +9,15 @@ class Mailer
     /**
      * @param array|string   email address to send
      * @param string         email content to send
+     * @param sting          attachment path if any
      * @param boolean        success or fail
      */
-    public static function send($address, $body)
+    public static function send($address, $body, $attachment_path = null)
     {
         $config = Config::getConfig();
+        if ($config->debug) {
+            return true;
+        }
 
         mb_language("japanese");
         mb_internal_encoding("UTF-8");
@@ -43,6 +47,10 @@ class Mailer
 
         $mail->Subject = 'U16 Asahikawa Programming Contest Email Nortification';
         $mail->Body    = mb_convert_encoding($body,"JIS","UTF-8");
+        if (! empty($attachment_path)) {
+            $mail->AddAttachment($attachment_path);
+        }
+
         // TODO error logging here
         if(!$mail->Send()) {
             return false;
