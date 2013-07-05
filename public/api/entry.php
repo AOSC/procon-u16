@@ -3,6 +3,10 @@
 require '../../vendor/autoload.php';
 use Utils\EntryValidator as V;
 use Models\Entry;
+use Utils\Log;
+use Utils\Mailer;
+
+$log = Log::getLogger();
 
 // TODO CSRF
 if (empty($_SESSION)) {
@@ -33,9 +37,11 @@ if (!empty($errors)) {
         echo '<li>' . $msg . '</li>';
     }
     echo '</ul>';
-    echo '<pre>';
-    echo json_encode($_POST, JSON_PRETTY_PRINT);
-    echo '</pre>';
+
+    $log->error('400 BadRequest');
+    $json = json_encode($_POST, JSON_PRETTY_PRINT);
+    $log->error($json);
+    Mailer::send('smagch@gmail.com', "Bad Request $json");
     exit();
 }
 
@@ -44,6 +50,15 @@ try {
     $ok = $entry->create($_POST);
     http_response_code(200);
     echo '受付を完了しました';
-} catch(\Exception $e) {
+    $log->info('Accept new entry');
+    $log->info(json_encode($_POST));
+    $csv_filename = $entry->writeCSV();
+    Mailer::send(array('smagch@gmail.com'),
+        '新たなエントリーを受け付けました', $csv_filename);
+} catch(\Exception $ex) {
     http_response_code(500);
+    $log->emergency('500 Internal Server Error');
+    $msg = $ex->getMessage();
+    $log->emergency($msg);
+    Mailer::send('smagch@gmail.com', "Internal Server Error $msg");
 }
