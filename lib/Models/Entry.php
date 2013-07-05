@@ -1,6 +1,7 @@
 <?php
 namespace Models;
 use Database;
+use Config;
 
 /*
 CREATE TABLE `entry` (
@@ -47,6 +48,11 @@ class Entry
     );
 
     /**
+     * @var array
+     */
+    private $model;
+
+    /**
      * Constructor
      * @param  pdo
      * @throws PDOException
@@ -76,12 +82,15 @@ class Entry
             :comment, :comment_kyogi, :comment_sakuhin, :comment_jugyo, :comment_lecture)';
 
         $statement = $this->pdo->prepare($sql);
-        $model = array_merge($this->defaults, $entry);
+        $model = array_merge($this->defaults, $entry, array(
+            'category' => implode(',', $entry['category'])
+        ));
+
         $ok = $statement->execute(array(
             ':name' => $model['name'],
             ':school_name' => $model['school_name'],
             ':grade' => $model['grade'],
-            ':category' => implode(',', $model['category']),
+            ':category' => $model['category'],
             ':q_kyogi_macro' => $model['q_kyogi_macro'],
             ':q_kyogi_exp' => $model['q_kyogi_exp'],
             ':lecture_pref_day_one' => $model['lecture_pref_day_one'],
@@ -95,6 +104,8 @@ class Entry
             ':comment_jugyo' => $model['comment_jugyo'],
         ));
 
+        $this->model = $model;
+
         if (!$ok) {
             $error_info = $statement->errorInfo();
             $error_str = json_encode($error_info);
@@ -102,5 +113,41 @@ class Entry
         }
 
         return true;
+    }
+
+    /**
+     * @return array
+     */
+    public function getModel()
+    {
+        return $this->model;
+    }
+
+    /**
+     * @return boolean|string
+     */
+    public function writeCSV()
+    {
+        if (empty($this->model)) {
+            return false;
+        }
+        $config = Config::getConfig();
+
+        $date = date_create();
+        $filename = $config->csv_path . date_format($date, 'Y-m-d-H-i') . '--' . uniqid() . '.csv';
+
+        $list = array(
+            array_keys($this->model),
+            array_values($this->model),
+        );
+
+        $fp = fopen($filename, 'w');
+
+        foreach ($list as $fields) {
+            fputcsv($fp, $fields);
+        }
+
+        fclose($fp);
+        return $filename;
     }
 }

@@ -6,5 +6,7 @@
   "mailer_username": "info@procon-asahikawa.lolipop.jp",
   "mailer_password": "",
   "logging_path": "debug.log",
-  "logging_level": "debug"
+  "logging_level": "debug",
+  "csv_path": "/Users/tom/Sites/procon-u16/csv/",
+  "debug": true
 }
