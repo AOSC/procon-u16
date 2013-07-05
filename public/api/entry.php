@@ -53,7 +53,7 @@ try {
     $log->info('Accept new entry');
     $log->info(json_encode($_POST));
     $csv_filename = $entry->writeCSV();
-    Mailer::send(array('smagch@gmail.com'),
+    Mailer::send(array('smagch@gmail.com', 'info@procon-asahikawa.org'),
         '新たなエントリーを受け付けました', $csv_filename);
 } catch(\Exception $ex) {
     http_response_code(500);
