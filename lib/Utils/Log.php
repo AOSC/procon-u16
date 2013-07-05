@@ -15,7 +15,7 @@ class Log
         $config = Config::getConfig();
         $log = new Logger('procon_u16');
         $level = strtoupper($config->logging_level);
-        $log->pushHandler(new StreamHandler($config->logging_path, constant("Logger::$level")));
+        $log->pushHandler(new StreamHandler($config->logging_path, constant("\Monolog\Logger::$level")));
         return $log;
     }
 }
