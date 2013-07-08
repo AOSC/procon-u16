@@ -233,6 +233,19 @@ ul.circle {
   text-align: right;
 }
 
+#entry-notice {
+  line-height: 100px;
+  margin-bottom: 40px;
+}
+
+#entry-notice a:hover {
+  color: #44d372;
+}
+
+#entry-notice a {
+  color: #36a95d;
+}
+
 #header {
   min-height: 600px;
   height: auto;
