@@ -234,8 +234,7 @@ ul.circle {
 }
 
 #entry-notice {
-  line-height: 100px;
-  margin-bottom: 40px;
+  margin: 60px 20px;
 }
 
 #entry-notice a:hover {
