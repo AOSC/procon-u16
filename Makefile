@@ -8,6 +8,7 @@ publish:
 	rsync -avCz -e 'ssh -p $(REMOTE_PORT)' --delete \
     --exclude='.DS_Store' \
     --exclude='*.log' \
+    --exclude='*.zip' \
     . $(REMOTE_PATH)
 	@git checkout config.json
 
