@@ -368,6 +368,18 @@ ul.circle {
   color: #efefef;
 }
 
+#entry-intro {
+  margin-top: 40px;
+}
+
+#entry-intro a {
+  color: #a3f61a;
+  font-size: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+}
+
 #oldie-outdated, #jsnotice {
   background: #ea6d6d;
   color: #482122;
@@ -399,7 +411,7 @@ ul.circle {
 #plug {
   margin: 0 auto;
   max-width: 480px;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 #plug h1 {
@@ -451,7 +463,19 @@ ul.circle {
   }
 
   #plug {
+    margin-bottom: 50px;
+  }
+
+  #plug h1 {
+    font-size: 17px;
+  }
+
+  #plug p {
     font-size: 14px;
+  }
+
+  #entry-intro a {
+    font-size: 30px;
   }
 
   #links {
