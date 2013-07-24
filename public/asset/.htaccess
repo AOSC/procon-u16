@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+  Header set Content-Disposition attachment
+  ForceType application/octet-stream
+  Allow from all
+</IfModule>

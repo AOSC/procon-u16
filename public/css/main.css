@@ -164,8 +164,8 @@ h1 small {
   font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"MS Ｐゴシック","MS PGothic";
 }
 
-p {
-  color: #646464;
+.accent {
+  color: #f6c04b;
 }
 
 a:hover {
@@ -212,8 +212,16 @@ input[type=submit] {
   margin-top: 20px;
 }
 
+ol li {
+  margin-bottom: 10px;
+}
+
 ul.circle {
   list-style: circle;
+}
+
+.left-align {
+  text-align: left;
 }
 
 .form-push {
@@ -320,6 +328,59 @@ ul.circle {
 }
 
 #lecture {
+}
+
+.background-container {
+  min-height: 500px;
+  position: relative;
+}
+
+.background-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+#kyogi,
+#sakuhin,
+#kyozai {
+  border-top: 1px solid #c9c9c9;
+  padding: 0;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+#kyogi h1,
+#sakuhin h1,
+#kyozai h1 {
+  padding: 40px 0;
+  margin: 0;
+  font-size: 50px;
+}
+
+#kyogi-background {
+  background: transparent url('../img/kyogi_2012_1440_700.jpg') no-repeat right center;
+}
+
+#sakuhin-background {
+  background: transparent url('../img/kaijo_2012_1440_700.jpg') no-repeat left top;
+}
+
+.contest-detail {
+  margin-left: 40px;
+}
+
+.well {
+  padding: 6px 20px 20px;
+  margin: 10px;
+  background: #f9f6fc;
+  border: 1px solid #eae6ee;
+  border-radius: 6px;
+  min-height: 200px;
 }
 
 .overlay {
@@ -488,7 +549,15 @@ ul.circle {
     margin: 20px auto;
     padding: 0;
   }
-}
+
+  #kyogi-background,
+  #sakuhin-background {
+    min-height: 300px;
+  }
+
+  .background-content {
+    position: inherit;
+  }
 }
 /* ==========================================================================
    Helper classes
