@@ -212,7 +212,8 @@ input[type=submit] {
   margin-top: 20px;
 }
 
-ol li {
+ol li,
+ul.circle li {
   margin-bottom: 10px;
 }
 
@@ -439,6 +440,10 @@ ul.circle {
   text-decoration: none;
   font-weight: bold;
   font-family: "ヒラギノ明朝 Pro W6", "Hiragino Mincho Pro", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+}
+
+#entry-intro a:hover {
+  color: #c63859;
 }
 
 #oldie-outdated, #jsnotice {
