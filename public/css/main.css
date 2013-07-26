@@ -346,18 +346,18 @@ ul.circle {
   opacity: 0.4;
 }
 
-#kyogi,
-#sakuhin,
-#kyozai {
+#kyogi-section,
+#sakuhin-section,
+#kyozai-section {
   border-top: 1px solid #c9c9c9;
   padding: 0;
   margin-top: 100px;
   margin-bottom: 80px;
 }
 
-#kyogi h1,
-#sakuhin h1,
-#kyozai h1 {
+#kyogi-section h1,
+#sakuhin-section h1,
+#kyozai-section h1 {
   padding: 40px 0;
   margin: 0;
   font-size: 50px;
