@@ -221,6 +221,10 @@ ul.circle {
   list-style: circle;
 }
 
+#username, #username-label {
+  display: none;
+}
+
 .left-align {
   text-align: left;
 }

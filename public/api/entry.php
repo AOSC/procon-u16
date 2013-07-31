@@ -25,6 +25,17 @@ switch ($_SERVER['REQUEST_METHOD']) {
 }
 
 /**
+ * honeypot form field
+ * "usename"は、フォームでは見えないようになっているテキストの入力項目です
+ * スパムは、HTMLを解析して自動的にフォーム書き込むので、CSSを理解できない大体のスパムを弾けます
+ */
+if (!empty($_POST['username'])) {
+    http_response_code(401);
+    $log->info('honeypot captured "username"');
+    exit();
+}
+
+/**
  * For details about CSRF read following documents
  * http://en.wikipedia.org/wiki/Cross-site_request_forgery
  * http://www.codinghorror.com/blog/2008/10/preventing-csrf-and-xsrf-attacks.html
@@ -37,7 +48,6 @@ if (empty($_SESSION['fkey'])) {
 
 if (empty($_POST['fkey']) || $_SESSION['fkey'] != $_POST['fkey']) {
     http_response_code(401);
-    echo 'セキュリティ上、リクエストを処理出来ません。';
     exit();
 }
 
