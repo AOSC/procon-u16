@@ -74,12 +74,12 @@ class Entry
             entry (name, school_name, grade, category,
             q_kyogi_macro, q_kyogi_exp, lecture_pref_day_one,
             lecture_pref_day_two, lecture_pref_day_three, lecture_pref_day_four,
-            comment, comment_kyogi, comment_sakuhin, comment_jugyo, comment_lecture)
+            comment, comment_kyogi, comment_sakuhin, comment_jugyo, comment_lecture, email)
         VALUES
             (:name, :school_name, :grade, :category,
             :q_kyogi_macro, :q_kyogi_exp, :lecture_pref_day_one,
             :lecture_pref_day_two, :lecture_pref_day_three, :lecture_pref_day_four,
-            :comment, :comment_kyogi, :comment_sakuhin, :comment_jugyo, :comment_lecture)';
+            :comment, :comment_kyogi, :comment_sakuhin, :comment_jugyo, :comment_lecture, :email)';
 
         $statement = $this->pdo->prepare($sql);
         $model = array_merge($this->defaults, $entry, array(
@@ -102,6 +102,7 @@ class Entry
             ':comment_kyogi' => $model['comment_kyogi'],
             ':comment_sakuhin' => $model['comment_sakuhin'],
             ':comment_jugyo' => $model['comment_jugyo'],
+            ':email' => $model['email'],
         ));
 
         $this->model = $model;

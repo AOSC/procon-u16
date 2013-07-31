@@ -21,6 +21,7 @@ CREATE TABLE `entry` (
   `comment_jugyo` text NOT NULL,
   `comment_lecture` text NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -60,6 +61,10 @@ class EntryValidator
             $errors[] = '学校名は必須です';
         } elseif (mb_strlen($model['school_name']) > 100) {
             $errors[] = '名前は100文字以下でお願いします';
+        }
+
+        if (! v::arr()->key('email', v::email())->validate($model)) {
+          $errors[] = 'メールアドレスは必須です';
         }
 
         $one_to_three = v::int()->between(1, 3, true);

@@ -23,5 +23,6 @@ CREATE TABLE `entry` (
   `comment_jugyo` text NOT NULL,
   `comment_lecture` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

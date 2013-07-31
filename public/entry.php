@@ -66,6 +66,8 @@ if (empty($_SESSION['fkey'])) {
       <input name='name' type='text' id='name' class='validate[required] maxSize[100]' />
       <label for='school_name'>学校名</label>
       <input name='school_name' type='text' id='school_name' class='validate[required] maxSize[100]'/>
+      <label for='email'>Email</label>
+      <input name='email' type='text' id='email' class='validate[required,custom[email]]' />
 
       <label>学年</label>
       <ul class="formee-list">
