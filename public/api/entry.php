@@ -30,13 +30,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
  * http://www.codinghorror.com/blog/2008/10/preventing-csrf-and-xsrf-attacks.html
  */
 if (empty($_SESSION['fkey'])) {
-    header(401);
+    http_response_code(401);
     echo 'セキュリティーの観点から、ブラウザのクッキーをオンにしていただく必要があります。';
     exit();
 }
 
 if (empty($_POST['fkey']) || $_SESSION['fkey'] != $_POST['fkey']) {
-    header(401);
+    http_response_code(401);
     echo 'セキュリティ上、リクエストを処理出来ません。';
     exit();
 }
