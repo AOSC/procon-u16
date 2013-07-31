@@ -55,7 +55,7 @@ if (!empty($errors)) {
     echo '</ul>';
 
     $log->error('400 BadRequest');
-    $json = json_encode($_POST, JSON_PRETTY_PRINT);
+    $json = json_encode($_POST);
     $log->error($json);
     Mailer::send('smagch@gmail.com', "Bad Request $json");
     exit();
