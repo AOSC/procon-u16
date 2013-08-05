@@ -11,10 +11,6 @@ CREATE TABLE `entry` (
   `category` set('kyogi','sakuhin','jugyo') NOT NULL,
   `q_kyogi_macro` enum('yes','no', '') DEFAULT '',
   `q_kyogi_exp` enum('yes','no', '') DEFAULT '',
-  `lecture_pref_day_one` tinyint(1) unsigned NOT NULL,
-  `lecture_pref_day_two` tinyint(1) unsigned NOT NULL,
-  `lecture_pref_day_three` tinyint(1) unsigned NOT NULL,
-  `lecture_pref_day_four` tinyint(1) unsigned NOT NULL,
   `comment` text NOT NULL,
   `comment_kyogi` text NOT NULL,
   `comment_sakuhin` text NOT NULL,
@@ -83,22 +79,6 @@ class EntryValidator
             if (! empty($diff)) {
                 $errors[] = implode(', ', $diff) . 'は不正なIDです';
             }
-        }
-
-        if (! v::arr()->key('lecture_pref_day_one', $one_to_three)->validate($model)) {
-            $errors[] = '参加希望日１が無効な値です';
-        }
-
-        if (! v::arr()->key('lecture_pref_day_two', $one_to_three)->validate($model)) {
-            $errors[] = '参加希望日２が無効な値です';
-        }
-
-        if (! v::arr()->key('lecture_pref_day_three', $one_to_three)->validate($model)) {
-            $errors[] = '参加希望日３が無効な値です';
-        }
-
-        if (! v::arr()->key('lecture_pref_day_four', $one_to_three)->validate($model)) {
-            $errors[] = '参加希望日４が無効な値です';
         }
 
         // max byte size of "text" is 64k

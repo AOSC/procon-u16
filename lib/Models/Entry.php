@@ -12,10 +12,6 @@ CREATE TABLE `entry` (
   `category` set('kyogi','sakuhin','jugyo') NOT NULL,
   `q_kyogi_macro` enum('yes','no', '') DEFAULT '',
   `q_kyogi_exp` enum('yes','no', '') DEFAULT '',
-  `lecture_pref_day_one` tinyint(1) unsigned NOT NULL,
-  `lecture_pref_day_two` tinyint(1) unsigned NOT NULL,
-  `lecture_pref_day_three` tinyint(1) unsigned NOT NULL,
-  `lecture_pref_day_four` tinyint(1) unsigned NOT NULL,
   `comment` text NOT NULL,
   `comment_kyogi` text NOT NULL,
   `comment_sakuhin` text NOT NULL,
@@ -72,13 +68,11 @@ class Entry
     {
         $sql = 'INSERT INTO
             entry (name, school_name, grade, category,
-            q_kyogi_macro, q_kyogi_exp, lecture_pref_day_one,
-            lecture_pref_day_two, lecture_pref_day_three, lecture_pref_day_four,
+            q_kyogi_macro, q_kyogi_exp,
             comment, comment_kyogi, comment_sakuhin, comment_jugyo, comment_lecture, email)
         VALUES
             (:name, :school_name, :grade, :category,
-            :q_kyogi_macro, :q_kyogi_exp, :lecture_pref_day_one,
-            :lecture_pref_day_two, :lecture_pref_day_three, :lecture_pref_day_four,
+            :q_kyogi_macro, :q_kyogi_exp,
             :comment, :comment_kyogi, :comment_sakuhin, :comment_jugyo, :comment_lecture, :email)';
 
         $statement = $this->pdo->prepare($sql);
@@ -93,10 +87,6 @@ class Entry
             ':category' => $model['category'],
             ':q_kyogi_macro' => $model['q_kyogi_macro'],
             ':q_kyogi_exp' => $model['q_kyogi_exp'],
-            ':lecture_pref_day_one' => $model['lecture_pref_day_one'],
-            ':lecture_pref_day_two' => $model['lecture_pref_day_two'],
-            ':lecture_pref_day_three' => $model['lecture_pref_day_three'],
-            ':lecture_pref_day_four' => $model['lecture_pref_day_four'],
             ':comment' => $model['comment'],
             ':comment_lecture' => $model['comment_lecture'],
             ':comment_kyogi' => $model['comment_kyogi'],
